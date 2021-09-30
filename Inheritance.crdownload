@@ -1,0 +1,140 @@
+#SINGLE INHERITANCE
+class niyaz:
+
+    def getdata(self,name):
+        print('Parent name is',name)
+
+    def getall(self,eye):
+        print('eyes are',eye)
+
+class mir(niyaz):
+
+    def getinfo(self,myname):
+        print('child name is',myname)
+
+s1= niyaz()
+s2=mir()
+
+s1.getdata("john")
+s1.getall("same")
+s2.getinfo("ramjohn")
+s2.getdata("sahil")
+
+
+
+
+
+#MULTIPLE INHERITANCE
+
+class niyaz:
+
+    def getdata(self,fname):
+        print('father name is ',fname)
+
+class vasu:
+
+    def getall(sel,mname):
+        print('mother name is ',mname)
+
+
+class danish(niyaz,vasu):
+
+    def getinfo(self,myname,eyes):
+        print(myname," ",eyes)
+
+s1=niyaz()
+s2=vasu()
+s3=danish()
+
+s1.getdata("mudasir")
+s2.getall("aati")
+s3.getinfo("aqib","same")
+s3.getall("tabasum")
+s3.getdata("mehboob")
+
+
+
+
+#MULTILEVEL INHERITANCE
+
+class niyaz:
+
+    def gethead(self,name):
+        print('parent name is ',name)
+
+class ahmad(niyaz):
+
+    def getfirst(self,childone):
+        print('ist child is:',childone)
+
+
+class mir(ahmad):
+
+    def getsecond(self,childtwo):
+        print('2nd child is:',childtwo)
+
+vasu=mir()
+
+vasu.gethead("Niyaz")
+vasu.getfirst("Ahmad")
+vasu.getsecond("mir")
+
+
+
+
+#HIERARCHICAL INHERITANCE
+class niyaz:
+    def getmain(self, name):
+        print("This function is in parent class.", name)
+
+
+class ahmad(niyaz):
+    def getist(self, childone):
+        print("This function is in child 1.", childone)
+
+
+class mir(niyaz):
+    def getsecond(self, childtwo):
+        print("This function is in child 2.", childtwo)
+
+
+s1=ahmad()
+s2=mir()
+s1.getmain("Niyaz")
+s1.getist("ahmad")
+s2.getmain("Mehboob")
+s2.getsecond("Mir")
+
+
+
+#HYBRID INHERITANCE
+class parent:
+    def getmain(self):
+        print("This function is in parent.")
+
+
+class childone(parent):
+    def getdata(self):
+        print("This function is in childone. ")
+
+
+class childtwo(parent):
+    def getinfo(self):
+        print("This function is in childtwo.")
+
+
+class childthree(childone, parent):
+    def getall(self):
+        print("This function is in child three.")
+
+
+object = childthree()
+object.getmain()
+object.getdata()
+object.getall()
+
+
+
+
+
+

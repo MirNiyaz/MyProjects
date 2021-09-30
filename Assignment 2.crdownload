@@ -1,0 +1,116 @@
+#LCM
+
+def lcm(n1,n2):
+    if n1>n2:
+        greater=n1
+    else:
+        greater=n2
+    while(True):
+        if(greater%n1==0 and greater%n2==0):
+            lcm=greater
+            break
+        greater+=1
+    return lcm
+
+n1=int(input("Enter the ist number: "))
+n2=int(input("Enter the 2nd number: "))
+print("The lcm of ",n1," and ",n2," is : ",lcm(n1,n2))
+
+
+
+# HCF
+
+def hcf(n1,n2):
+    if n1<n2:
+        result=n1
+    elif n2<n1:
+        result=n2
+    else:
+        result=n1
+    while(True):
+        if(n1%result==0 and n2%result==0):
+            hcf=result
+            break
+        result-=1
+    return hcf
+
+
+n1=int(input("Enter the ist number: "))
+n2=int(input("Enter the 2nd number: "))
+print("The Hcf of ",n1," and ",n2," is : ",hcf(n1,n2))
+
+
+#PRIME
+
+num=int(input("Enter a number: "))
+flag=0
+for i in range(2,num):
+    if num%i==0:
+        flag=1
+        break
+if flag==1:
+    print(num," is not  prime")
+else:
+    print(num,"is prime")
+
+
+# FABONACCI SERIES
+def fabonacii(n):
+    if n==1:
+        return 0
+    elif n==2:
+        return 1
+    else:
+         return fabonacii(n-1)+fabonacii(n-2)
+
+
+print("Enter the upper limit: ",end=" ")
+n=int(input())
+if n>0:
+    print("The Fabonacii series is: ")
+
+    for i in range(1,n+1):
+       x=fabonacii(i)
+       print(x,end=" ")
+
+
+else:
+    print("Enter the valid limit")
+
+
+
+# PALINDROME
+
+num=input("Enter the number: ")
+rev=reversed(num)
+if list(num)==list(rev):
+      print(num," is a palindrome. ")
+else:
+    print(num," is not a palindrome. ")
+
+
+
+
+#REVERSE
+
+def rev_number(num):
+    temp=0
+    while(num!=0):
+        rem=int(num%10)
+        num=int(num/10)
+        temp=int((temp*10)+rem)
+    return temp
+
+def rev_str(string):
+    a=""
+    for i in string:
+        a=i+a
+    return a
+
+num=int(input("Enter the number:"))
+string=input("Enter the string:")
+print("Reversed number:",rev_number(num))
+print("Reversed String:",rev_str(string))
+
+
+
